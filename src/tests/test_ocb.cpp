@@ -185,7 +185,7 @@ class OCB_Wide_Long_KAT_Tests : public Text_Based_Test
          const size_t bs = get_req_sz(vars, "Blocklen") / 8;
          const std::vector<uint8_t> expected = get_req_bin(vars, "Output");
 
-         if(bs != 16 && bs != 32 && bs != 64)
+         if(bs != 16 && bs != 24 && bs != 32 && bs != 64)
             throw Test_Error("Unsupported Blocklen in OCB wide block test");
 
          Botan::OCB_Encryption enc(new OCB_Wide_Test_Block_Cipher(bs), std::min<size_t>(bs, 32));
