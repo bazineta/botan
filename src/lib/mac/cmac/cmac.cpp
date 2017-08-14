@@ -34,6 +34,7 @@ secure_vector<uint8_t> CMAC::poly_double(const secure_vector<uint8_t>& in)
             out[out.size()-1] ^= 0x1B;
             break;
          case 16:
+         case 24:
             out[out.size()-1] ^= 0x87;
             break;
          case 32:
